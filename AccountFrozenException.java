@@ -1,13 +1,20 @@
-/** Indicates that an operation was attempted on a frozen account. */
+/**
+ * Indicates that an operation was attempted on a frozen account.
+ */
 public class AccountFrozenException extends Exception {
-  String message;
+  private final String message;
 
-  public AccountFrozenException(String message){
+  /**
+   * Creates a frozen account exception with the given message.
+   *
+   * @param message the error message
+   */
+  public AccountFrozenException(String message) {
     this.message = message;
   }
 
+  @Override
   public String getMessage() {
     return message;
   }
-
 }
